@@ -1,0 +1,7 @@
+[package]
+name = "bar"
+version = "0.1.0"
+authors = ["Benno Fünfstück <benno.fuenfstueck@gmail.com>"]
+
+[dependencies]
+lib = { path = "../lib-v2", version = "0.2.0" }
