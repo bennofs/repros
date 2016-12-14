@@ -1,4 +1,5 @@
 #include <QWidget>
+#include <QDebug>
 
 class MainClass : public QWidget {
   Q_OBJECT
@@ -24,6 +25,7 @@ class MainClass : public QWidget {
     }
 
     virtual void moveEvent(QMoveEvent*) override {
+      qDebug() << x() << ":" << y();
       dependent.move(x() + 200 + 20, y());
     }
 

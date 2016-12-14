@@ -2,3 +2,6 @@
 Makefile
 moc_*.cpp
 dependent-window-move
+*.o
+*.hi
+xmonad
