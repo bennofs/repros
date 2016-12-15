@@ -1,5 +1,7 @@
 #include <QWidget>
 #include <QDebug>
+#include <QMoveEvent>
+#include <QResizeEvent>
 
 class MainClass : public QWidget {
   Q_OBJECT
@@ -24,9 +26,15 @@ class MainClass : public QWidget {
       move(300, 300);
     }
 
-    virtual void moveEvent(QMoveEvent*) override {
-      qDebug() << x() << ":" << y();
-      dependent.move(x() + 200 + 20, y());
+    virtual void moveEvent(QMoveEvent* event) override {
+      qDebug() << "MOVE   " << event->oldPos() << "\t->" << event->pos();
+      dependent.move(x() + width() + 20, y());
+    }
+
+    virtual void resizeEvent(QResizeEvent* event) override {
+      qDebug() << "RESIZE " << event->oldSize() << "\t->" << event->size();
+      dependent.resize(40, height());
+      dependent.move(x() + width() + 20, y());
     }
 
     virtual ~MainClass() {}
