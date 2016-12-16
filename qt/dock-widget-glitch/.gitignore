@@ -1,0 +1,4 @@
+*.o
+dock-widget-glitch
+.qmake.stash
+moc_*
