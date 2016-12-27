@@ -1,3 +1,3 @@
 all:
-	sh ./test.sh
+	echo "abc" | grep "b"
 .PHONY: all
