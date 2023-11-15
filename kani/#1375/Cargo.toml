@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+	"macrodef",
+	"project",
+]
